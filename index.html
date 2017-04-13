@@ -51,11 +51,11 @@
 
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right ulmenu">
-                <li><a href="#Transition"> Cours </a></li>
-                <li><a href="#Rendu"> Rendu </a></li>
-                <li><a href="#Contact"> Contact </a></li>
+                <li><a class="js-scrollTo" href="#Transition"> Cours </a></li>
+                <li><a class="js-scrollTo" href="#Rendu"> Rendu </a></li>
+                <li><a class="js-scrollTo" href="#Contact"> Contact </a></li>
                 <li id="top" style="display: none;">
-                    <a href="#haut">
+                    <a class="js-scrollTo" href="#haut">
                         <svg xmlns="http://www.w3.org/2000/svg" width="17.41" height="21.4" viewBox="0 0 17.41 21.4">
                             <rect x="0.71" y="19.4" width="16" height="2"/>
                             <rect x="-1.29" y="10.4" width="20" height="2" transform="translate(-2.69 20.11) rotate(-90)"/>
@@ -74,7 +74,7 @@
                 <h1>Site Immersif</h1>
                 <h2>Promo 2020 A2</h2>
                 <h3>Option Web et e-business</h3>
-                <a href="#Transition"><button type="submit" class="sendbtn2">Commencer le cours</button></a>
+                <a class="js-scrollTo" href="#Transition"><button type="submit" class="sendbtn2">Commencer le cours</button></a>
             </div>
         </div>
     </div>
@@ -353,6 +353,16 @@
 
 
 
+<script>
+    $(document).ready(function() {
+        $('.js-scrollTo').on('click', function() { // Au clic sur un élément
+            var page = $(this).attr('href'); // Page cible
+            var speed = 750; // Durée de l'animation (en ms)
+            $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+            return false;
+        });
+    });
+</script>
 
 </body>
 </html>
